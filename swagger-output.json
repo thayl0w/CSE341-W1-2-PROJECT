@@ -5,35 +5,36 @@
     "description": "A simple API to manage contacts",
     "version": "1.0.0"
   },
-  "host": "https://cse341-w1-2-project.onrender.com/",
+  "host": "localhost:https://cse341-w1-2-project.onrender.com/",
   "basePath": "/",
-  "schemes": ["http", "https"],
+  "schemes": [
+    "http",
+    "https"
+  ],
   "paths": {
     "/": {
       "get": {
-        "tags": ["Hello World"],
-        "description": "Returns Hello World message",
-        "produces": ["application/json"],
+        "tags": [
+          "Users"
+        ],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
         "responses": {
           "200": {
-            "description": "Hello World response"
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
-        }
-      }
-    },
-    "/users": {
-      "get": {
-        "tags": ["Users"],
-        "description": "Get all contacts",
-        "produces": ["application/json"],
-        "responses": {
-          "200": { "description": "OK" },
-          "500": { "description": "Internal Server Error" }
         }
       },
       "post": {
-        "tags": ["Users"],
-        "description": "Create a new contact",
+        "tags": [
+          "Users"
+        ],
+        "description": "",
         "parameters": [
           {
             "name": "body",
@@ -41,68 +42,127 @@
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": { "example": "any" },
-                "lastName": { "example": "any" },
-                "email": { "example": "any" },
-                "favoriteColor": { "example": "any" },
-                "birthday": { "example": "any" }
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "favoriteColor": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
+                }
               }
             }
           }
         ],
         "responses": {
-          "201": { "description": "Created" },
-          "500": { "description": "Internal Server Error" }
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     },
-    "/users/{id}": {
+    "/{id}": {
       "get": {
-        "tags": ["Users"],
-        "description": "Get a contact by ID",
+        "tags": [
+          "Users"
+        ],
+        "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
-          "200": { "description": "OK" },
-          "404": { "description": "Not Found" },
-          "500": { "description": "Internal Server Error" }
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       },
       "put": {
-        "tags": ["Users"],
-        "description": "Update a contact",
+        "tags": [
+          "Users"
+        ],
+        "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
           {
             "name": "body",
             "in": "body",
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": { "example": "any" },
-                "lastName": { "example": "any" },
-                "email": { "example": "any" },
-                "favoriteColor": { "example": "any" },
-                "birthday": { "example": "any" }
+                "firstName": {
+                  "example": "any"
+                },
+                "lastName": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "favoriteColor": {
+                  "example": "any"
+                },
+                "birthday": {
+                  "example": "any"
+                }
               }
             }
           }
         ],
         "responses": {
-          "204": { "description": "No Content" },
-          "500": { "description": "Internal Server Error" }
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       },
       "delete": {
-        "tags": ["Users"],
-        "description": "Delete a contact",
+        "tags": [
+          "Users"
+        ],
+        "description": "",
         "parameters": [
-          { "name": "id", "in": "path", "required": true, "type": "string" }
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
         ],
         "responses": {
-          "204": { "description": "No Content" },
-          "500": { "description": "Internal Server Error" }
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
         }
       }
     }
