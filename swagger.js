@@ -5,8 +5,8 @@ const doc = {
     title: 'CSE341 API',
     description: 'User API with Hello World',
   },
-  host: 'cse341-w1-2-project.onrender.com', // ✅ Render domain
-  schemes: ['https'], // ✅ since Render forces HTTPS
+  host: 'cse341-w1-2-project.onrender.com', 
+  schemes: ['https'], 
 };
 
 const outputFile = './swagger-output.json';
