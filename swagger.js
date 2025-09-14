@@ -1,16 +1,15 @@
-const swaggerautogen = require('swagger-autogen')();
+const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
-    info: {
-        title: 'Contacts API',      
-        description: 'A simple API to manage contacts'
-    },
-    host: 'localhost:https://cse341-w1-2-project.onrender.com/',
-    schemes: ['http', 'https'],
-};  
+  info: {
+    title: 'CSE341 API',
+    description: 'User API with Hello World',
+  },
+  host: 'cse341-w1-2-project.onrender.com', // ✅ Render domain
+  schemes: ['https'], // ✅ since Render forces HTTPS
+};
 
 const outputFile = './swagger-output.json';
-const endpointsFiles = ['./routes/users.js'];
+const endpointsFiles = ['./server.js'];
 
-//this will generate the swagger-output.json file
-swaggerautogen(outputFile, endpointsFiles, doc);
+swaggerAutogen(outputFile, endpointsFiles, doc);

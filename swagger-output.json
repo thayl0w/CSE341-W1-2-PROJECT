@@ -1,18 +1,30 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Contacts API",
-    "description": "A simple API to manage contacts",
+    "title": "CSE341 API",
+    "description": "User API with Hello World",
     "version": "1.0.0"
   },
-  "host": "localhost:https://cse341-w1-2-project.onrender.com/",
+  "host": "cse341-w1-2-project.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
     "/": {
+      "get": {
+        "tags": [
+          "Hello World"
+        ],
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/users/": {
       "get": {
         "tags": [
           "Users"
@@ -71,7 +83,7 @@
         }
       }
     },
-    "/{id}": {
+    "/users/{id}": {
       "get": {
         "tags": [
           "Users"
